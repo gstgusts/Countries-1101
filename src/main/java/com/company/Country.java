@@ -9,15 +9,15 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@Entity
-//@Table(name="country")
+@Entity
+@Table(name="country")
 public class Country {
- //   @Id
- //   @GeneratedValue(strategy = GenerationType.IDENTITY)
- //   @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
- //   @Column(name = "code")
+    @Column(name = "code")
     private String code;
- //   @Column(name = "name")
+    @Column(name = "name")
     private String name;
 }

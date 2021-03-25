@@ -14,7 +14,7 @@ public class DatabaseManager {
         try {
             factory = new Configuration()
                     .configure()
-                    //.addAnnotatedClass(Country.class)
+                    .addAnnotatedClass(Country.class)
                     .buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Failed to create sessionFactory object." + ex);
