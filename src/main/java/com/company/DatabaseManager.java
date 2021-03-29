@@ -120,4 +120,8 @@ public class DatabaseManager {
     public void testMethodTwo(){
 
     }
+
+    public void testMethod4(){
+
+    }
 }
