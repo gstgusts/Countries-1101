@@ -112,4 +112,8 @@ public class DatabaseManager {
 
         return null;
     }
+
+    public void testMethod(){
+
+    }
 }
