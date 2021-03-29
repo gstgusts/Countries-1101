@@ -121,6 +121,10 @@ public class DatabaseManager {
 
     }
 
+    public void testMethod3 () {
+
+    }
+
     public void testMethod4(){
 
     }
