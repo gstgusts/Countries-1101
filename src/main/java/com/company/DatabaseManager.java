@@ -55,6 +55,10 @@ public class DatabaseManager {
         }
     }
 
+    public void testMethod8(){
+
+    }
+
     public void update(Object item) {
         var session = factory.openSession();
         Transaction tx = null;
