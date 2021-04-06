@@ -1,12 +1,16 @@
 package com.company;
 
 import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DatabaseManager {
     private static SessionFactory factory;
@@ -56,7 +60,7 @@ public class DatabaseManager {
     }
 
     public void testMethod8(){
-        System.out.println("asdfasdfasdf");
+
     }
 
     public void update(Object item) {
@@ -115,6 +119,36 @@ public class DatabaseManager {
         }
 
         return null;
+    }
+
+    public List<Country> getCountriesFromView() {
+        var session = factory.openSession();
+
+        try {
+
+            String sql = "select * FROM vgetcountriesstartinga";
+            var query = session.createSQLQuery(sql);
+
+            var result = query.list().stream()
+                    .map(item -> mapToCountry(item))
+                    .collect(Collectors.toList());
+
+            int a = 1;
+
+            return (ArrayList<Country>)result;
+
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+
+        return new ArrayList<>();
+    }
+
+    private Country mapToCountry(Object obj) {
+        var row = (Object[]) obj;
+        return new Country((int)row[0], (String)row[1], (String)row[2]);
     }
 
     public void testMethod(){

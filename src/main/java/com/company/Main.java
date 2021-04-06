@@ -38,4 +38,10 @@ public class Main {
         var dm = new DatabaseManager();
         dm.getById(1);
     }
+
+    @Test
+    public void getFromView() {
+        var dm = new DatabaseManager();
+        dm.getCountriesFromView();
+    }
 }
