@@ -62,4 +62,16 @@ public class Main {
         var dm = new DatabaseManager();
         dm.getById(1);
     }
+
+    @Test
+    public void getById5() {
+        var dm = new DatabaseManager();
+        dm.getById(1);
+    }
+
+    @Test
+    public void getById6() {
+        var dm = new DatabaseManager();
+        dm.getById(1);
+    }
 }
