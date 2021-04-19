@@ -20,4 +20,8 @@ public class Country {
     private String code;
     @Column(name = "name")
     private String name;
+
+    public static Country create(Object[] row) {
+        return new Country((int)row[0], (String)row[1], (String)row[2]);
+    }
 }

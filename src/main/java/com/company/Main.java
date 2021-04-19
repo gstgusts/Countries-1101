@@ -44,4 +44,10 @@ public class Main {
         var dm = new DatabaseManager();
         dm.getCountriesFromView();
     }
+
+    @Test
+    public void getById2() {
+        var dm = new DatabaseManager();
+        dm.getById(1);
+    }
 }
