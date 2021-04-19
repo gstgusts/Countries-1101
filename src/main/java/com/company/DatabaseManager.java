@@ -147,8 +147,7 @@ public class DatabaseManager {
     }
 
     private Country mapToCountry(Object obj) {
-        var row = (Object[]) obj;
-        return new Country((int)row[0], (String)row[1], (String)row[2]);
+        return Country.create((Object[])obj);
     }
 
     public void testMethod(){
